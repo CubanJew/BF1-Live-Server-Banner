@@ -2,14 +2,14 @@
 
 header('Content-type: image/png');
 
-function getData($pPlatform="3", $pID="2209304950230"){  
+function getData($pPlatform="3", $pID="YOUR_API_KEY"){  
 	$ch = curl_init(); 
 	curl_setopt($ch, CURLOPT_URL, "https://battlefieldtracker.com/bf1/api/quick-server-info?platform=". $pPlatform . "&id=" . $pID);
 	curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.73 Safari/537.36"); 
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
 	curl_setopt($ch, CURLOPT_TIMEOUT, 10); 
 	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('TRN-Api-Key: _YOUR_API_KEY_'));
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('TRN-Api-Key: 1779b4d4-ae91-489a-acc5-a080bfee6143'));
 	$response = curl_exec($ch);
 	curl_close($ch);
 	return json_decode($response, true);
@@ -38,6 +38,16 @@ function setCanvas($map) {
 	elseif(strcmp($map, "Galicia")			== 0) 	return imagecreatefromjpeg('media/img_canvas/Galicia.jpg');
 	elseif(strcmp($map, "Brusilov Keep")	== 0) 	return imagecreatefromjpeg('media/img_canvas/Brusilov Keep.jpg');
 	elseif(strcmp($map, "Albion")			== 0) 	return imagecreatefromjpeg('media/img_canvas/Albion.jpg');
+	elseif(strcmp($map, "Achi Baba")		== 0) 	return imagecreatefromjpeg('media/img_canvas/Achi Baba.jpg');
+	elseif(strcmp($map, "Cape Helles")		== 0) 	return imagecreatefromjpeg('media/img_canvas/Cape Helles.jpg');
+	elseif(strcmp($map, "Zeebrugge")		== 0) 	return imagecreatefromjpeg('media/img_canvas/Zeebrugge.jpg');
+	elseif(strcmp($map, "Heligoland Bight")	== 0) 	return imagecreatefromjpeg('media/img_canvas/Heligoland Bight.jpg');
+	elseif(strcmp($map, "Passchendaele")	== 0) 	return imagecreatefromjpeg('media/img_canvas/Passchendaele.jpg');
+	elseif(strcmp($map, "River Somme")	== 0) 	return imagecreatefromjpeg('media/img_canvas/River Somme.jpg');
+	elseif(strcmp($map, "Caporetto")	== 0) 	return imagecreatefromjpeg('media/img_canvas/Caporetto.jpg');
+	elseif(strcmp($map, "London Calling: Raiders")	== 0) 	return imagecreatefromjpeg('media/img_canvas/London Calling- Raiders.jpg');
+	elseif(strcmp($map, "London Calling: Scourge")	== 0) 	return imagecreatefromjpeg('media/img_canvas/London Calling- Raiders.jpg');
+	elseif(strcmp($map, "Razor's Edge")	== 0) 	return imagecreatefromjpeg('media/img_canvas/Razors Edge.jpg');
 	else											return imagecreatefromjpeg('media/img_canvas/_default.jpg');
 	
 }
