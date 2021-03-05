@@ -11,8 +11,8 @@ Execute `/sig.php` to use hardcoded default server ID. Server ID may be supplied
 
 4) (OPTIONAL) BF1 Server ID will randomly change. In order to optimize execution time of sig.php, a default serverID ($nwgServerID) is hardcoded in the script if server ID argument is not provided. A separate script (sig_scrape_server_id.php) may be run via CRON job in CPANEL to updated the default hardcoded serverID in sig.php.
 
-4a) Upload `sig_scrape_server_id.php` and `includes/simple_html_dom.php`
-4b) Edit the following search URL inside *scrapeServerID()* of *sig_scrape_server_id.php*:
+* Upload `sig_scrape_server_id.php` and `includes/simple_html_dom.php`
+* Edit the following search URL inside *scrapeServerID()* of *sig_scrape_server_id.php*:
 	`$html = file_get_html('https://battlefieldtracker.com/bf1/servers?platform=pc&name=nwg');`
 	Make sure the search URL only retrieves a single result. 
 
