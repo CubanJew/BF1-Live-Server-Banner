@@ -11,7 +11,7 @@ To supply server ID dynamically pass server ID as *s_id* argument (e.g., `sig.ph
 2) Obtain an API key from https://battlefieldtracker.com/site-api
 3) Open up `sig.php` and replace _YOUR_API_KEY_ with your battletracker API key inside of `getData()` function (in  curl_setopt($ch, CURLOPT_HTTPHEADER....)
 
-4) (OPTIONAL) BF1 Server ID will randomly change. In order to optimize execution time of sig.php, a default serverID ($nwgServerID) is hardcoded in the script if server ID argument is not provided. A separate script (sig_scrape_server_id.php) may be run via CRON job (command *php -q /home/.../public_html/...sig_scrape_server_id.php*) in CPANEL to update default hardcoded serverID in sig.php.
+4) (OPTIONAL) BF1 Server ID will randomly change. In order to optimize execution time of sig.php, a default serverID ($nwgServerID) is hardcoded in the script if server ID argument is not provided. A separate script (sig_scrape_server_id.php) may be run via CRON job (command *php -q /home/.../public_html/...sig_scrape_server_id.php*) in CPANEL to periodically check and update default hardcoded serverID in sig.php.
 
 * Upload `sig_scrape_server_id.php` and `includes/simple_html_dom.php`
 * Edit the following search URL inside *scrapeServerID()* of *sig_scrape_server_id.php*:
