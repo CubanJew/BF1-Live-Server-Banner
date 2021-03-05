@@ -1,15 +1,15 @@
 <?php
-
 header('Content-type: image/png');
-
-function getData($pPlatform="3", $pID="YOUR_API_KEY"){  
+$nwgServerID=5430354760989;
+// do NOT rename/remove above variable line. Used by sig_scrape_server_id.php to update default server ID for NWG server.
+function getData($pPlatform="3", $pID){  
 	$ch = curl_init(); 
 	curl_setopt($ch, CURLOPT_URL, "https://battlefieldtracker.com/bf1/api/quick-server-info?platform=". $pPlatform . "&id=" . $pID);
 	curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.73 Safari/537.36"); 
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
 	curl_setopt($ch, CURLOPT_TIMEOUT, 10); 
 	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array('TRN-Api-Key: 1779b4d4-ae91-489a-acc5-a080bfee6143'));
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('TRN-Api-Key: YOUR_API_KEY'));
 	$response = curl_exec($ch);
 	curl_close($ch);
 	return json_decode($response, true);
@@ -85,7 +85,7 @@ function displayImage($d) {
 	imagepng($img);
 	imagedestroy($img);
 }
-$serverID = empty($_GET["s_id"]) ? "2295700350661" : htmlspecialchars($_GET["s_id"]);
+$serverID = empty($_GET["s_id"]) ? $nwgServerID : htmlspecialchars($_GET["s_id"]);
 displayImage(getData(3,$serverID));
 
 ?>
