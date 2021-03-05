@@ -1,5 +1,5 @@
 <?php
-require('simple_html_dom.php');
+require('includes/simple_html_dom.php');
 
 function scrapeServerID() 
 {
