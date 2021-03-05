@@ -2,7 +2,8 @@
 Dynamically generate image with BF1 PC server information in real-time in PHP using battlefieldtracker API JSON data.
 
 # Usage
-To use default hardcoded serverID, execute `/sig.php.
+To use default hardcoded serverID, execute `/sig.php.`
+
 To supply server ID dynamically pass server ID as *s_id* argument (e.g., `sig.php?s_id=5428144750219`).
 
 # Installation Instructions
