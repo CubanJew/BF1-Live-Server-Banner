@@ -5,9 +5,9 @@ Dynamically generate image with BF1 PC server information in real-time in PHP us
 Execute `/sig.php` to use hardcoded default server ID. Server ID may be supplied as *s_id* parameter (e.g., `sig.php?s_id=5428144750219`)
 
 # Installation Instructions
-1) Upload "sig.php" and "/media" directory to web server.
+1) Upload `sig.php` and `/media` directory to web server.
 2) Obtain an API key from https://battlefieldtracker.com/site-api
-3) Open up "sig.php" and replace _YOUR_API_KEY_ with your battletracker API key inside of `getData()` function (in  curl_setopt($ch, CURLOPT_HTTPHEADER....)
+3) Open up `sig.php` and replace _YOUR_API_KEY_ with your battletracker API key inside of `getData()` function (in  curl_setopt($ch, CURLOPT_HTTPHEADER....)
 
 4) (OPTIONAL) BF1 Server ID will randomly change. In order to optimize execution time of sig.php, a default serverID ($nwgServerID) is hardcoded in the script if server ID argument is not provided. A separate script (sig_scrape_server_id.php) may be run via CRON job in CPANEL to updated the default hardcoded serverID in sig.php.
 
